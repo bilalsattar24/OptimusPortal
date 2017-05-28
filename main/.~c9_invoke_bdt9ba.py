@@ -59,21 +59,20 @@ def day(request):
             day = d
     
     if not day:
-        print "day not found"
+        print da
     
     employees = Employee.objects.all()
     stores = Store.objects.all()
-    
+    d.
     # python dictionary to be passed into day.html    
     context = {
         'month' : month,
         'day' : day,
+        'dayDate' : str(day.date),
         'truck' : truck,
         'employees' : employees,
         'stores' : stores
     }
-    if day:
-        context['dayDate'] = str(day.date)
     
     return HttpResponse(template.render(context, request))
 

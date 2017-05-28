@@ -12,7 +12,13 @@
 <body>
     {% include 'main/navbar.html' %}
 
-    <h1>Day Page</h1>
+    {% if day %}
+    <h1>Edit {{day.date}}</h1>
+    {% else %}
+    <h1>New Day (select date)</h1>
+    {% endif %}
+    
+
     <h3>
         {% if day %} 
             {{day}} 
@@ -26,7 +32,8 @@
         
         <div class="row">
             <div class="col-xs-12">
-                
+                {% if day %}
+                <!--if the day that was passed through already exists and is just being edited -->
                 <form action="/addday">
                     <div class="form-group">
                         <label for="">Day: </label>
@@ -47,7 +54,7 @@
 
                     <div class="form-group">
                         <label for="">Number of Deliveries: </label>
-                        <input type="number" id="numDeliveries" name="numDeliveries" />
+                        <input type="number" id="numDeliveries" name="numDeliveries" value="{{day.numDeliveries}}"/>
                     </div>
 
                     <div class="form-group">
@@ -87,6 +94,9 @@
                     <input type="submit">
                     
                 </form>
+                {% else %} 
+                <!-- need to add blank form with no pre fills from pre existing day -->
+                {% endif %}
 
             </div>
         </div>
