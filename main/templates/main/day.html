@@ -2,39 +2,95 @@
 <html>
 
 <head>
-    <title> </title>
+    <title>Edit {{day.date}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <!--header-->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                <a class="navbar-brand" href="/main">Optimus Logistics</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="">
-                        <a href="/main">Home </a>
-                    </li>
-                    <li class="active">
-                        <a>New Week </a>
-                    </li>
-                    <li class="">
-                        <a href="">Reports </a>
-                    </li>
-                </ul>
+    {% include 'main/navbar.html' %}
+
+    <h1>Day Page</h1>
+    <h3>
+        {% if day %} 
+            {{day}} 
+        {% else %} 
+            no day created 
+        {% endif %}
+    </h3>
+    <h4>Truck: {{truck.truckName}}</h4>
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-xs-12">
+                
+                <form action="/addday">
+                    <div class="form-group">
+                        <label for="">Day: </label>
+                        <select id="dayName">
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datePick">Date: </label>
+                        <input type="date" id="datePick" name="datePick" value="{{dayDate}}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Number of Deliveries: </label>
+                        <input type="number" id="numDeliveries" name="numDeliveries" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="helperName">Helper: </label>
+                        <select id=helperName>
+                            {% for e in employees %}
+                                <option value="{{e.id}}">{{e}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="driverName">Driver: </label>
+                        <select id="driverName">
+                            {% for e in employees %}
+                                <option value="{{e.id}}">{{e}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="storeNum">Store Number</label>
+                        <select id="storeNum">
+                            {% for s in stores %}
+                                <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="saturdayDate">Week of: </label>
+                        <select id="saturdayDate">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    
+                    <input type="submit">
+                    
+                </form>
+
             </div>
         </div>
-    </nav>
-    <!-- end header -->
-    <h1>Day Page</h1>
-    <h2>Month: {{month}}</h2>
+    </div>
 </body>
 
 </html>

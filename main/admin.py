@@ -1,4 +1,7 @@
 from django.contrib import admin
-from models import Truck
+from models import *
 # Register your models here.
 admin.site.register(Truck)
+admin.site.register(Day)
+admin.site.register(Employee)
+admin.site.register(Store)

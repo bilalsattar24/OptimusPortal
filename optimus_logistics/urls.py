@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^main/', 'main.views.index', name='index'),
     url(r'^newweek/', 'main.views.newweek', name='newweek'),
     url(r'^day/', 'main.views.day', name='day'),
+    url(r'^addday/', 'main.views.addday', name='addday'),
     url(r'^admin/', admin.site.urls)
 ]
