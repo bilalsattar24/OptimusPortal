@@ -45,7 +45,7 @@ def day(request):
         if str(t.id) == str(truckID):
             print "truck found"
             truck = t
-            break
+            b
     
     #d ate requested from user built to match column in "day" object
     requestedDate = year + "-" + month + "-" + day
@@ -101,15 +101,15 @@ def addday(request):
     if dayID:
         for d in days:
             if str(d.id) == str(dayID):
-                d.dayName = dayName
-                d.date = date
-                d.numDeliveries = numDeliveries
-                d.helper = helper
-                d.driver = driver
-                d.storeNum = storeNum
-                # d.saturday = saturdayDate
-                d.save()
-                break
+    #            d.dayName = dayName
+    #            d.date = date
+    #            d.numDeliveries = numDeliveries
+    #            d.helper = helper
+    #            d.driver = driver
+    #            d.storeNum = storeNum
+    #            # d.saturday = saturdayDate
+    #            d.save()
+    #            break
     
     
                 

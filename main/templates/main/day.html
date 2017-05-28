@@ -32,12 +32,12 @@
         
         <div class="row">
             <div class="col-xs-12">
-                {% if day %}
                 <!--if the day that was passed through already exists and is just being edited -->
+                {% if day %}
                 <form action="/addday">
                     <div class="form-group">
                         <label for="">Day: </label>
-                        <select id="dayName">
+                        <select name="dayName" id="dayName">
                             <option value="Saturday">Saturday</option>
                             <option value="Sunday">Sunday</option>
                             <option value="Monday">Monday</option>
@@ -59,25 +59,25 @@
 
                     <div class="form-group">
                         <label for="helperName">Helper: </label>
-                        <select id=helperName>
+                        <select name="helperName" id="helperName">
                             {% for e in employees %}
-                                <option value="{{e.id}}">{{e}}</option>
+                                <option value="{{e}}">{{e}}</option>
                             {% endfor %}
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="driverName">Driver: </label>
-                        <select id="driverName">
+                        <select name="driverName" id="driverName">
                             {% for e in employees %}
-                                <option value="{{e.id}}">{{e}}</option>
+                                <option value="{{e}}">{{e}}</option>
                             {% endfor %}
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="storeNum">Store Number</label>
-                        <select id="storeNum">
+                        <select name="storeNum" id="storeNum">
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
                             {% endfor %}
@@ -86,7 +86,69 @@
 
                     <div class="form-group">
                         <label for="saturdayDate">Week of: </label>
-                        <select id="saturdayDate">
+                        <select name="saturdayDate" id="saturdayDate">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    
+                    <input type="hidden" name="dayID" value="{{day.id}}"/>
+                    <input type="submit">
+                    
+                </form>
+                {% else %} 
+                <form action="/addday">
+                    <div class="form-group">
+                        <label for="">Day: </label>
+                        <select id="dayName">
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datePick">Date: </label>
+                        <input type="date" id="datePick" name="datePick"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Number of Deliveries: </label>
+                        <input type="number" id="numDeliveries" name="numDeliveries"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="helperName">Helper: </label>
+                        <select name="helperName" id=helperName>
+                            {% for e in employees %}
+                                <option value="{{e}}">{{e}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="driverName">Driver: </label>
+                        <select name="driverName" id="driverName">
+                            {% for e in employees %}
+                                <option value="{{e}}">{{e}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="storeNum">Store Number</label>
+                        <select name="storeNum" id="storeNum">
+                            {% for s in stores %}
+                                <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="saturdayDate">Week of: </label>
+                        <select name="saturdayDate" id="saturdayDate">
                             <option value=""></option>
                         </select>
                     </div>
@@ -94,9 +156,9 @@
                     <input type="submit">
                     
                 </form>
-                {% else %} 
-                <!-- need to add blank form with no pre fills from pre existing day -->
                 {% endif %}
+                
+                
 
             </div>
         </div>

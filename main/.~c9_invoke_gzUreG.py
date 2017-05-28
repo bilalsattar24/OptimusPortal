@@ -86,7 +86,7 @@ def addday(request):
     dayID = request.GET.get('dayID')
     dayName = request.GET.get('dayName')
     date = request.GET.get('datePick')
-    numDeliveries = request.GET.get('numDeliveries')
+    numDeliv
     helper = request.GET.get('helperName')
     driver = request.GET.get('driverName')
     storeNum = request.GET.get('storeNum')
@@ -101,15 +101,15 @@ def addday(request):
     if dayID:
         for d in days:
             if str(d.id) == str(dayID):
-                d.dayName = dayName
-                d.date = date
-                d.numDeliveries = numDeliveries
-                d.helper = helper
-                d.driver = driver
-                d.storeNum = storeNum
-                # d.saturday = saturdayDate
-                d.save()
-                break
+    #            d.dayName = dayName
+    #            d.date = date
+    #            d.numDeliveries = numDeliveries
+    #            d.helper = helper
+    #            d.driver = driver
+    #            d.storeNum = storeNum
+    #            # d.saturday = saturdayDate
+    #            d.save()
+    #            break
     
     
                 

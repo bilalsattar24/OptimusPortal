@@ -93,7 +93,7 @@ def addday(request):
     saturdayDate = request.GET.get('saturdayDate')
     
     
-    print driver
+    print helper
     
     
     days = Day.objects.all()
@@ -101,15 +101,15 @@ def addday(request):
     if dayID:
         for d in days:
             if str(d.id) == str(dayID):
-                d.dayName = dayName
-                d.date = date
-                d.numDeliveries = numDeliveries
-                d.helper = helper
-                d.driver = driver
-                d.storeNum = storeNum
-                # d.saturday = saturdayDate
-                d.save()
-                break
+    #            d.dayName = dayName
+    #            d.date = date
+    #            d.numDeliveries = numDeliveries
+    #            d.helper = helper
+    #            d.driver = driver
+    #            d.storeNum = storeNum
+    #            # d.saturday = saturdayDate
+    #            d.save()
+    #            break
     
     
                 

@@ -85,7 +85,7 @@ def addday(request):
     template = loader.get_template('main/day.html')
     dayID = request.GET.get('dayID')
     dayName = request.GET.get('dayName')
-    date = request.GET.get('datePick')
+    date = 
     numDeliveries = request.GET.get('numDeliveries')
     helper = request.GET.get('helperName')
     driver = request.GET.get('driverName')
@@ -101,15 +101,15 @@ def addday(request):
     if dayID:
         for d in days:
             if str(d.id) == str(dayID):
-                d.dayName = dayName
-                d.date = date
-                d.numDeliveries = numDeliveries
-                d.helper = helper
-                d.driver = driver
-                d.storeNum = storeNum
-                # d.saturday = saturdayDate
-                d.save()
-                break
+    #            d.dayName = dayName
+    #            d.date = date
+    #            d.numDeliveries = numDeliveries
+    #            d.helper = helper
+    #            d.driver = driver
+    #            d.storeNum = storeNum
+    #            # d.saturday = saturdayDate
+    #            d.save()
+    #            break
     
     
                 
