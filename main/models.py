@@ -26,6 +26,7 @@ class Day(models.Model):
     pay = None
     storeNum = models.IntegerField()
     saturday = models.DateField(default = None)
+    truck = models.CharField(max_length=500, null="true")
     
     def __str__(self):
         return str(self.date)
@@ -34,4 +35,4 @@ class Store(models.Model):
     storeNumber = models.IntegerField()
     
     def __str__(self):
-        return self.storeNumber
+        return str(self.storeNumber)

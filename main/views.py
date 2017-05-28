@@ -97,7 +97,8 @@ def addday(request):
     
     
     days = Day.objects.all()
-
+    
+    # if ID is passed, then this day exsits and it is being edited. 
     if dayID:
         for d in days:
             if str(d.id) == str(dayID):
@@ -111,7 +112,10 @@ def addday(request):
                 d.save()
                 break
     
+    # otherwise, create a new day with the related information
     
+        
+        
                 
     
     return HttpResponse(template.render(request))
