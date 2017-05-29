@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import redirect
 from models import *
 
 
@@ -78,6 +79,7 @@ def day(request):
     if day:
         context['dayDate'] = str(day.date)
         context['dayID'] = str(day.id)
+        context['saturdayDate'] = str(day.saturday)
     
     return HttpResponse(template.render(context, request))
 
@@ -91,7 +93,7 @@ def addday(request):
     driver = request.GET.get('driverName')
     storeNum = request.GET.get('storeNum')
     saturdayDate = request.GET.get('saturdayDate')
-    
+    truckName = request.GET.get('truckName')
     
     print driver
     
@@ -108,14 +110,22 @@ def addday(request):
                 d.helper = helper
                 d.driver = driver
                 d.storeNum = storeNum
-                # d.saturday = saturdayDate
+                d.saturday = saturdayDate
+                d.truck = truckName
                 d.save()
                 break
+                return redirect('/main')
     
     # otherwise, create a new day with the related information
-    
-        
-        
-                
-    
-    return HttpResponse(template.render(request))
+    else:
+        d = Day()
+        d.dayName = dayName
+        d.date = date
+        d.numDeliveries = numDeliveries
+        d.helper = helper
+        d.driver = driver
+        d.storeNum = storeNum
+        d.saturday = saturdayDate
+        d.truck = truckName
+        d.save()
+        return redirect('/main')

@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="storeNum">Store Number</label>
+                        <label for="storeNum">Store Number: </label>
                         <select name="storeNum" id="storeNum">
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
@@ -86,12 +86,11 @@
 
                     <div class="form-group">
                         <label for="saturdayDate">Week of: </label>
-                        <select name="saturdayDate" id="saturdayDate">
-                            <option value=""></option>
-                        </select>
+                        <input type="date" id="saturdayDate" name="saturdayDate" value="{{saturdayDate}}">
                     </div>
                     
                     <input type="hidden" name="dayID" value="{{day.id}}"/>
+                    <input type="hidden" name="truckName" value="{{truck.truckName}}">
                     <input type="submit">
                     
                 </form>
