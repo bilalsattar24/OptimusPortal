@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from main import views as main_views
 
 urlpatterns = [
-    url(r'^main/', 'main.views.index', name='index'),
-    url(r'^newweek/', 'main.views.newweek', name='newweek'),
-    url(r'^day/', 'main.views.day', name='day'),
-    url(r'^addday/', 'main.views.addday', name='addday'),
+    url(r'^main/', main_views.index, name='index'),
+    url(r'^newweek/', main_views.newweek, name='newweek'),
+    url(r'^day/', main_views.day, name='day'),
+    url(r'^addday/', main_views.addday, name='addday'),
     url(r'^admin/', admin.site.urls)
 ]
