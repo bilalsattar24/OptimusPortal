@@ -84,6 +84,9 @@ def day(request):
     return HttpResponse(template.render(context, request))
 
 def addday(request):
+    # receive all of the data coming from day.html. if day ID
+    # is passed, then it's an edit to an exsiting day, otherwise
+    # the information will be passed to a new day object
     template = loader.get_template('main/day.html')
     dayID = request.GET.get('dayID')
     dayName = request.GET.get('dayName')
@@ -94,8 +97,6 @@ def addday(request):
     storeNum = request.GET.get('storeNum')
     saturdayDate = request.GET.get('saturdayDate')
     truckName = request.GET.get('truckName')
-    
-    print "date: "+ saturdayDate
     
     
     days = Day.objects.all()
