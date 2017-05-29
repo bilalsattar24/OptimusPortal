@@ -7,7 +7,14 @@ from models import *
 
 # Create your views here.
 # these method names are called when you visit /methodname(request) [i.e website.com/index]
-
+def home(request):
+    #this method is purely to redirect to /main
+    template = loader.get_template('main/index.html') #select html file
+    context = {
+        'test': "Bilal"
+    }
+    return redirect('/main')
+    
 def index(request):
     allEmployees = Employee.objects.all()
     template = loader.get_template('main/index.html') #select html file

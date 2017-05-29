@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^newweek/', main_views.newweek, name='newweek'),
     url(r'^day/', main_views.day, name='day'),
     url(r'^addday/', main_views.addday, name='addday'),
-    url(r'^admin/', admin.site.urls)
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', main_views.home, name='home')
 ]
