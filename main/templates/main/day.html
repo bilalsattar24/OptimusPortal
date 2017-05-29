@@ -98,7 +98,7 @@
                 <form action="/addday">
                     <div class="form-group">
                         <label for="">Day: </label>
-                        <select id="dayName">
+                        <select name="dayName" id="dayName">
                             <option value="Saturday">Saturday</option>
                             <option value="Sunday">Sunday</option>
                             <option value="Monday">Monday</option>
@@ -147,11 +147,9 @@
 
                     <div class="form-group">
                         <label for="saturdayDate">Week of: </label>
-                        <select name="saturdayDate" id="saturdayDate">
-                            <option value=""></option>
-                        </select>
+                        <input type="date" name="saturdayDate" id="saturdayDate">
                     </div>
-                    
+                    <input type="hidden" name="truckName" value="{{truck.truckName}}">
                     <input type="submit">
                     
                 </form>

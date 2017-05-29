@@ -95,7 +95,7 @@ def addday(request):
     saturdayDate = request.GET.get('saturdayDate')
     truckName = request.GET.get('truckName')
     
-    print driver
+    print "date: "+ saturdayDate
     
     
     days = Day.objects.all()
@@ -128,4 +128,4 @@ def addday(request):
         d.saturday = saturdayDate
         d.truck = truckName
         d.save()
-        return redirect('/main')
+    return redirect('/main')
