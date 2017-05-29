@@ -48,7 +48,7 @@ def day(request):
             truck = t
             break
     
-    #d ate requested from user built to match column in "day" object
+    # date requested from user built to match column in "day" object
     requestedDate = year + "-" + month + "-" + day
     
     # get all days
