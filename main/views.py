@@ -14,7 +14,7 @@ def home(request):
         'test': "Bilal"
     }
     return redirect('/main')
-    
+
 def index(request):
     allEmployees = Employee.objects.all()
     template = loader.get_template('main/index.html') #select html file
@@ -91,7 +91,7 @@ def day(request):
     return HttpResponse(template.render(context, request))
 
 def addday(request):
-    # receive all of the data coming from day.html. if day ID
+    # receive all of the data coming from day.html. if dayID
     # is passed, then it's an edit to an exsiting day, otherwise
     # the information will be passed to a new day object
     template = loader.get_template('main/day.html')
