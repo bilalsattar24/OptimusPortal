@@ -14,6 +14,7 @@ class Employee(models.Model):
     firstName = models.CharField(max_length=500)
     lastName = models.CharField(max_length=500)
     
+
     def __str__(self):
         return self.firstName + " " + self.lastName
     
@@ -25,8 +26,11 @@ class Day(models.Model):
     driver = models.CharField(max_length=500)
     pay = None
     storeNum = models.IntegerField()
+    storeNum2 = models.IntegerField(null=True, default= None)
     saturday = models.DateField(default = None)
     truck = models.CharField(max_length=500, null="true")
+    truck2 = models.CharField(max_length=500, default= None)
+    isOff = models.NullBooleanField(null= True, default = None)
     
     def __str__(self):
         return str(self.date)
