@@ -30,7 +30,7 @@ class Day(models.Model):
     saturday = models.DateField(default = None)
     truck = models.CharField(max_length=500, null="true")
     truck2 = models.CharField(max_length=500, default= None)
-    isOff = models.NullBooleanField(null= True, default = None)
+    isOff = models.NullBooleanField(null= True, default = False)
     
     def __str__(self):
         return str(self.date)

@@ -5,8 +5,8 @@
     <title>Edit {{day.date}}</title>
     {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     {% endif %}
     
 
-    <h3>
+    <h3>debugging purposes:
         {% if day %} 
             {{day}} 
         {% else %} 
@@ -94,8 +94,12 @@
                     <input type="submit">
                     
                 </form>
+                <!--otherwise, create a new day-->
                 {% else %} 
                 <form action="/addday">
+                    <div class="form-group">
+                        <label class="isOff" for=""> OFF DAY? </label>
+                        <input type="checkbox" name="isOff"> 
                     <div class="form-group">
                         <label for="">Day: </label>
                         <select name="dayName" id="dayName">
@@ -120,7 +124,7 @@
 
                     <div class="form-group">
                         <label for="helperName">Helper: </label>
-                        <select name="helperName" id=helperName>
+                        <select name="helperName" id="helperName">
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
                             {% endfor %}
