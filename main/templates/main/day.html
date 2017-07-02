@@ -19,7 +19,7 @@
     <h1 class="text-center">New Day (select date)</h1>
     {% endif %}
     
-
+    <!--
     <h3>debugging purposes:
         {% if day %} 
             {{day}} 
@@ -27,12 +27,13 @@
             no day created 
         {% endif %}
     </h3>
+    -->
     <h2 class="text-center">Truck: {{truck.truckName}}</h2>
 
     <div class="container">
         
         <div class="row">
-            <div class="col-xs-12 center">
+            <div class="col-xs-4 center">
                 <!--if the day that was passed through already exists and is just being edited -->
                 {% if day %}
                 <form action="/addday">
@@ -97,9 +98,9 @@
                 </form>
                 <!--otherwise, create a new day-->
                 {% else %} 
-                <form action="/addday">
+                <form class="well" action="/addday">
                     <div class="form-group">
-                        <label class="gray" for="">Off day? </label>
+                        <label class="gray" id="isOff" for="">Off day? </label>
                         <input type="checkbox" name="isOff"> 
                     </div>
 
@@ -120,12 +121,12 @@
                             <option value="Friday">Friday</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group numDeliveries">
                         <label for="">*Number of Deliveries: </label>
                         <input type="number" id="numDeliveries" name="numDeliveries"/>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group helperName">
                         <label for="helperName">*Helper: </label>
                         <select name="helperName" id="helperName">
                             {% for e in employees %}
@@ -134,7 +135,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group driverName">
                         <label for="driverName">*Driver: </label>
                         <select name="driverName" id="driverName">
                             {% for e in employees %}
@@ -143,7 +144,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group storeNum">
                         <label for="storeNum">*Store Number</label>
                         <select name="storeNum" id="storeNum">
                             <!--store numbers from database -->
