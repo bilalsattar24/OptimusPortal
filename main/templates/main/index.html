@@ -5,8 +5,8 @@
         {% load static %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
         
     </head>
  
@@ -41,8 +41,9 @@
             
             </div>
         </nav>
+        <div class="text-center">
         <h1>Welcome to the home page</h1>
-        <h3>{{test}}</h3>
+        <h2>{{selectDateTruck}}</h2>
         <form id="datePick" action="/day">
             <select name="month">
                 <option value="01">January</option>
@@ -102,7 +103,7 @@
                 <option value="2023">2023</option>
             </select>
             </br>
-            Truck:
+            Truck: 
             <select name="truckID">
                 {% for truck in trucks %}
                 <option value="{{truck.id}}">{{truck.truckName}}</option>
@@ -110,6 +111,7 @@
             </select>
             <input type="submit"/>
         </form>
+        </div>
     </body>
 
 

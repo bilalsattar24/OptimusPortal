@@ -4,3 +4,10 @@ h1 {
 .isOff {
     color: red;
 }
+.center {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.storeNum2 {
+    color: gray;
+}

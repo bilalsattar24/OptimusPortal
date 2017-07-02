@@ -11,7 +11,8 @@ def home(request):
     #this method is purely to redirect to /main
     template = loader.get_template('main/index.html') #select html file
     context = {
-        'test': "Bilal"
+        'test': "Bilal",
+        'selectDateTruck': "Select a date and truck"
     }
     return redirect('/main')
 
@@ -24,7 +25,8 @@ def index(request):
     # dictionary that can be passed into html file to access variables
     context = {
         'test': "Bilal",
-        'trucks' : trucks
+        'trucks' : trucks,
+        'selectDateTruck': "Select a date and truck"
     }
     
     return HttpResponse(template.render(context, request))
