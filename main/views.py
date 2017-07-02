@@ -115,6 +115,8 @@ def addday(request):
         d.date = date
         d.dayName = dayName
         d.save()
+        success = "Off Day successfully added"
+        return redirect('/main', success=success)
     
     days = Day.objects.all()
     

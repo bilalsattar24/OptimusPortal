@@ -39,5 +39,5 @@ $(".newDatePick").change(function() {
     var dayName = days[dayNumber];
     $(".newDayName").val(dayName);
 })
-    
+//prefill date that comes over from index.html into datepick   
 
