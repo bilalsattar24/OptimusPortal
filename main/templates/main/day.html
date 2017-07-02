@@ -14,9 +14,9 @@
     {% include 'main/navbar.html' %}
 
     {% if day %}
-    <h1>Edit {{day.date}}</h1>
+    <h1 class="text-center">Edit {{day.date}}</h1>
     {% else %}
-    <h1>New Day (select date)</h1>
+    <h1 class="text-center">New Day (select date)</h1>
     {% endif %}
     
 
@@ -27,12 +27,12 @@
             no day created 
         {% endif %}
     </h3>
-    <h4>Truck: {{truck.truckName}}</h4>
+    <h2 class="text-center">Truck: {{truck.truckName}}</h2>
 
     <div class="container">
         
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 center">
                 <!--if the day that was passed through already exists and is just being edited -->
                 {% if day %}
                 <form action="/addday">
@@ -99,10 +99,11 @@
                 {% else %} 
                 <form action="/addday">
                     <div class="form-group">
-                        <label class="isOff" for=""> OFF DAY? </label>
+                        <label class="gray" for="">Off day? </label>
                         <input type="checkbox" name="isOff"> 
+                    </div>
                     <div class="form-group">
-                        <label for="">Day: </label>
+                        <label for="">*Day: </label>
                         <select name="dayName" id="dayName" class="newDayName">
                             <option value="Saturday">Saturday</option>
                             <option value="Sunday">Sunday</option>
@@ -115,17 +116,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="datePick">Date: </label>
+                        <label for="datePick">*Work date: </label>
                         <input type="date" class="newDatePick" id="datePick" name="datePick"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Number of Deliveries: </label>
+                        <label for="">*Number of Deliveries: </label>
                         <input type="number" id="numDeliveries" name="numDeliveries"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="helperName">Helper: </label>
+                        <label for="helperName">*Helper: </label>
                         <select name="helperName" id="helperName">
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
@@ -134,7 +135,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="driverName">Driver: </label>
+                        <label for="driverName">*Driver: </label>
                         <select name="driverName" id="driverName">
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
@@ -143,7 +144,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="storeNum">Store Number</label>
+                        <label for="storeNum">*Store Number</label>
                         <select name="storeNum" id="storeNum">
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
@@ -152,7 +153,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="storeNum2" class="storeNum2">Second Store Number</label>
+                        <label for="storeNum2" class="gray storeNum2">Second Store Number</label>
                         <select name="storeNum2" id="storeNum2">
                             <option value="none">None</option>
                             {% for s in stores %}
@@ -162,10 +163,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="saturdayDate">Week of: </label>
+                        <label for="saturdayDate">*Week of: </label>
                         <input type="date" name="saturdayDate" id="saturdayDate">
                     </div>
-                    <input type="hidden" name="truckName" value="{{truck.truckName}}">
+                    <input class="text-center" type="hidden" name="truckName" value="{{truck.truckName}}">
                     <input type="submit">
                     
                 </form>

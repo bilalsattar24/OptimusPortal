@@ -1,13 +1,10 @@
 h1 {
     color: cornflowerblue;
 }
-.isOff {
-    color: red;
-}
 .center {
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 33%;
+    margin-right: 33%;
 }
-.storeNum2 {
+.gray {
     color: gray;
 }
