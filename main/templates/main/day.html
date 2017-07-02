@@ -4,6 +4,7 @@
 <head>
     <title>Edit {{day.date}}</title>
     {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
@@ -102,19 +103,20 @@
                         <input type="checkbox" name="isOff"> 
                     <div class="form-group">
                         <label for="">Day: </label>
-                        <select name="dayName" id="dayName">
+                        <select name="dayName" id="dayName" class="newDayName">
                             <option value="Saturday">Saturday</option>
                             <option value="Sunday">Sunday</option>
                             <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
                             <option value="Friday">Friday</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="datePick">Date: </label>
-                        <input type="date" id="datePick" name="datePick"/>
+                        <input type="date" class="newDatePick" id="datePick" name="datePick"/>
                     </div>
 
                     <div class="form-group">
@@ -158,8 +160,7 @@
                     
                 </form>
                 {% endif %}
-                
-                
+                <script src="{% static 'main/js/preFill.js' %}"></script>
 
             </div>
         </div>
