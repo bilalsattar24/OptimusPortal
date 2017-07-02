@@ -146,9 +146,11 @@
                     <div class="form-group">
                         <label for="storeNum">*Store Number</label>
                         <select name="storeNum" id="storeNum">
+                            <!--store numbers from database -->
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
                             {% endfor %}
+                            <!---->
                         </select>
                     </div>
 
@@ -161,6 +163,8 @@
                             {% endfor %}
                         </select>
                     </div>
+
+                    <!-- add optional field for second truck -->
 
                     <div class="form-group">
                         <label for="saturdayDate">*Week of: </label>
