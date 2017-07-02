@@ -21,12 +21,14 @@ def index(request):
     template = loader.get_template('main/index.html') #select html file
     
     trucks = Truck.objects.all()
-    
+    success = request.GET.get('success')
+    print success
     # dictionary that can be passed into html file to access variables
     context = {
         'test': "Bilal",
         'trucks' : trucks,
-        'selectDateTruck': "Select a date and truck"
+        'selectDateTruck': "Select a date and truck",
+        'success' : success
     }
     
     return HttpResponse(template.render(context, request))
@@ -115,8 +117,9 @@ def addday(request):
         d.date = date
         d.dayName = dayName
         d.save()
-        success = "Off Day successfully added"
-        return redirect('/main', success=success)
+        success = "Off Day successfully added!"
+        url = '/main/?success='+success
+        return redirect(url)
     
     days = Day.objects.all()
     
