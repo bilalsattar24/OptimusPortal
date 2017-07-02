@@ -80,6 +80,7 @@ def day(request):
     context = {
         'month' : month,
         'day' : day,
+        'year' : year,
         'truck' : truck,
         'employees' : employees,
         'stores' : stores
@@ -106,7 +107,14 @@ def addday(request):
     storeNum = request.GET.get('storeNum')
     saturdayDate = request.GET.get('saturdayDate')
     truckName = request.GET.get('truckName')
+    isOff = request.GET.get('isOff')
     
+    if isOff:
+        d = Day()
+        d.isOff = True
+        d.date = date
+        d.dayName = dayName
+        d.save()
     
     days = Day.objects.all()
     

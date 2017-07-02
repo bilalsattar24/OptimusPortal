@@ -19,17 +19,17 @@ class Employee(models.Model):
         return self.firstName + " " + self.lastName
     
 class Day(models.Model):
-    dayName = models.CharField(max_length=30)
-    date = models.DateField(default = None)
-    numDeliveries = models.IntegerField()
-    helper = models.CharField(max_length=500)
-    driver = models.CharField(max_length=500)
+    dayName = models.CharField(max_length=30, null=True)
+    date = models.DateField(null=True)
+    numDeliveries = models.IntegerField(null=True)
+    helper = models.CharField(max_length=500, null=True)
+    driver = models.CharField(max_length=500, null=True)
     pay = None
-    storeNum = models.IntegerField()
-    storeNum2 = models.IntegerField(null=True, default= None)
-    saturday = models.DateField(default = None)
-    truck = models.CharField(max_length=500, null="true")
-    truck2 = models.CharField(max_length=500, default= None)
+    storeNum = models.IntegerField(null=True)
+    storeNum2 = models.IntegerField(null=True, default=None)
+    saturday = models.DateField(null=True)
+    truck = models.CharField(max_length=500, null=True)
+    truck2 = models.CharField(max_length=500, null=True)
     isOff = models.NullBooleanField(null= True, default = False)
     
     def __str__(self):

@@ -102,6 +102,12 @@
                         <label class="gray" for="">Off day? </label>
                         <input type="checkbox" name="isOff"> 
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="datePick">*Work date: </label>
+                        <input type="date" class="newDatePick" id="datePick" name="datePick"/>
+                    </div>
+
                     <div class="form-group">
                         <label for="">*Day: </label>
                         <select name="dayName" id="dayName" class="newDayName">
@@ -115,11 +121,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="datePick">*Work date: </label>
-                        <input type="date" class="newDatePick" id="datePick" name="datePick"/>
-                    </div>
-
+                    <a href="/addday/?month={{month}}&amp;day={{day}}&amp;year={{year}}">Off day?</a>
                     <div class="form-group">
                         <label for="">*Number of Deliveries: </label>
                         <input type="number" id="numDeliveries" name="numDeliveries"/>
