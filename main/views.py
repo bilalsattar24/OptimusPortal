@@ -85,7 +85,8 @@ def day(request):
         'year' : year,
         'truck' : truck,
         'employees' : employees,
-        'stores' : stores
+        'stores' : stores,
+        'requestedDate' : requestedDate
     }
     
     if day:
