@@ -155,7 +155,11 @@ def addday(request):
         d.helper = helper
         d.driver = driver
         d.storeNum = storeNum
+        if storeNum2:
+            d.storeNum2 = storeNum2
         d.saturday = saturdayDate
         d.truck = truckName
+        if truckName2:
+            d.truck2 = truckName2
         d.save()
     return redirect('/main')
