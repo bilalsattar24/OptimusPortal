@@ -166,4 +166,4 @@ def addday(request):
     return redirect('/main')
 
 def reports(request):
-    
+    return redirect('/main')
