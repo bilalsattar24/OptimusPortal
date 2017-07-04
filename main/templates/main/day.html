@@ -155,7 +155,7 @@
                     <div class="form-group">
                         <label for="storeNum2" class="gray storeNum2">Second Store Number</label>
                         <select name="storeNum2" id="storeNum2">
-                            <option value="none">None</option>
+                            <option value="0">None</option>
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
                             {% endfor %}

@@ -27,7 +27,7 @@ class Day(models.Model):
     driver = models.CharField(max_length=500, null=True)
     pay = None
     storeNum = models.IntegerField(null=True)
-    storeNum2 = models.IntegerField(null=True, default=None)
+    storeNum2 = models.IntegerField(null=True, default=0)
     saturday = models.DateField(null=True)
     truck = models.CharField(max_length=500, null=False, default="None")
     isOff = models.NullBooleanField(null= True, default = False)

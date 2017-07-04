@@ -108,7 +108,7 @@ def addday(request):
     helper = request.GET.get('helperName')
     driver = request.GET.get('driverName')
     storeNum = request.GET.get('storeNum')
-    storeNum2 = request.GET.get('storeNum2')
+    storeNum2 = int(request.GET.get('storeNum2'))
     saturdayDate = request.GET.get('saturdayDate')
     truckName = request.GET.get('truckName')
     #truckName2 = request.GET.get('truckName2')
