@@ -20,6 +20,7 @@ from main import views as main_views
 
 urlpatterns = [
     url(r'^main/', main_views.index, name='index'),
+    url(r'^reports/', main_views.reports, name='reports'),
     url(r'^newweek/', main_views.newweek, name='newweek'),
     url(r'^day/', main_views.day, name='day'),
     url(r'^addday/', main_views.addday, name='addday'),
