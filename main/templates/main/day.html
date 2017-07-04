@@ -25,7 +25,9 @@
         
         <div class="row">
             <div class="col-xs-4 center">
+                
                 <!--if the day that was passed through already exists and is just being edited -->
+                <!--
                 {% if day %}
                 <form action="/addday">
                     <div class="form-group">
@@ -90,6 +92,7 @@
                     <input type="submit">
                     
                 </form>
+                -->
                 <!--otherwise, create a new day-->
                 {% else %} 
                 <form class="well" action="/addday">
@@ -177,7 +180,7 @@
                 <script src="{% static 'main/js/formValidation.js' %}"></script>
 
             </div>
-        </div>
+        </div><!-- row -->
     </div>
 </body>
 
