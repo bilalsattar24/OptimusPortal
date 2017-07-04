@@ -33,7 +33,10 @@ class Day(models.Model):
     isOff = models.NullBooleanField(null= True, default = False)
     
     def __str__(self):
-        return str(self.date)
+        date = str(self.date)
+        truckName = str(self.truck)
+        result = date + "--" + truckName
+        return result
 
 class Store(models.Model):
     storeNumber = models.IntegerField()

@@ -56,12 +56,13 @@
 
                     <div class="form-group">
                         <label for="">Number of Deliveries: </label>
-                        <input type="number" id="numDeliveries" name="numDeliveries" value="{{day.numDeliveries}}"/>
+                        <input type="number" id="numDeliveries" name="numDeliveries" value="{{day.numDeliveries}}" min=0/>
                     </div>
 
                     <div class="form-group">
                         <label for="helperName">Helper: </label>
-                        <select name="helperName" id="helperName">
+                        <select name="helperName" id="helperName" required>
+                            <option value="">None</option>
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
                             {% endfor %}
@@ -70,7 +71,8 @@
 
                     <div class="form-group">
                         <label for="driverName">Driver: </label>
-                        <select name="driverName" id="driverName">
+                        <select name="driverName" id="driverName" required>
+                            <option value="">None</option>
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
                             {% endfor %}
@@ -79,7 +81,8 @@
 
                     <div class="form-group">
                         <label for="storeNum">Store Number: </label>
-                        <select name="storeNum" id="storeNum">
+                        <select name="storeNum" id="storeNum" required>
+                            <option value="">None</option>
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
                             {% endfor %}
@@ -88,7 +91,7 @@
 
                     <div class="form-group">
                         <label for="saturdayDate">Week of: </label>
-                        <input type="date" id="saturdayDate" name="saturdayDate" value="{{saturdayDate}}">
+                        <input type="date" id="saturdayDate" name="saturdayDate" value="{{saturdayDate}}" required>
                     </div>
                     
                     <input type="hidden" name="dayID" value="{{day.id}}"/>
@@ -123,12 +126,13 @@
                     </div>
                     <div class="form-group numDeliveries">
                         <label for="">*Number of Deliveries: </label>
-                        <input type="number" id="numDeliveries" name="numDeliveries"/>
+                        <input type="number" id="numDeliveries" name="numDeliveries" min=0 required/>
                     </div>
 
                     <div class="form-group helperName">
                         <label for="helperName">*Helper: </label>
-                        <select name="helperName" id="helperName">
+                        <select name="helperName" id="helperName" class="helperName" required>
+                            <option value="">None</option>
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
                             {% endfor %}
@@ -137,7 +141,8 @@
 
                     <div class="form-group driverName">
                         <label for="driverName">*Driver: </label>
-                        <select name="driverName" id="driverName">
+                        <select name="driverName" id="driverName" class="driverName" required>
+                            <option value="">None</option>
                             {% for e in employees %}
                                 <option value="{{e}}">{{e}}</option>
                             {% endfor %}
@@ -146,8 +151,9 @@
 
                     <div class="form-group storeNum">
                         <label for="storeNum">*Store Number</label>
-                        <select name="storeNum" id="storeNum">
+                        <select name="storeNum" id="storeNum" class="storeNum" required>
                             <!--store numbers from database -->
+                            <option value="">None</option>
                             {% for s in stores %}
                                 <option value="{{s.storeNumber}}">{{s.storeNumber}}</option>
                             {% endfor %}
@@ -169,7 +175,7 @@
 
                     <div class="form-group">
                         <label for="saturdayDate">*Week of: </label>
-                        <input type="date" name="saturdayDate" id="saturdayDate">
+                        <input type="date" name="saturdayDate" id="saturdayDate" required>
                     </div>
                     <input class="text-center" type="hidden" name="truckName" value="{{truck.truckName}}">
                     <input type="submit">
