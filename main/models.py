@@ -13,6 +13,7 @@ class Truck(models.Model):
 class Employee(models.Model):
     firstName = models.CharField(max_length=500)
     lastName = models.CharField(max_length=500)
+    overtimeNumber = models.IntegerField(null=True)
     
 
     def __str__(self):
@@ -29,7 +30,6 @@ class Day(models.Model):
     storeNum2 = models.IntegerField(null=True, default=None)
     saturday = models.DateField(null=True)
     truck = models.CharField(max_length=500, null=True)
-    truck2 = models.CharField(max_length=500, null=True)
     isOff = models.NullBooleanField(null= True, default = False)
     
     def __str__(self):

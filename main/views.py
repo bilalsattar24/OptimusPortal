@@ -119,6 +119,7 @@ def addday(request):
         d.isOff = True
         d.date = date
         d.dayName = dayName
+        d.truck = truckName
         d.save()
         success = "Off Day successfully added!"
         url = '/main/?success='+success
