@@ -166,7 +166,18 @@ def reports(request):
     weekOf = str(weekOf)
     #modify weekOf to meet the format of django date
 
+    daysOfWeek = []
     days = Day.objects.all()
+    for d in days:
+        if d.weekOf == weekOf:
+            daysOfWeek.append(d)
+    
+    #sort by day, start from saturday
+    #add sorted list to context
+    
+    context = {
+        'test' : "Bilal"
+    }
 
 
 
