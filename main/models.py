@@ -29,7 +29,7 @@ class Day(models.Model):
     storeNum = models.IntegerField(null=True)
     storeNum2 = models.IntegerField(null=True, default=None)
     saturday = models.DateField(null=True)
-    truck = models.CharField(max_length=500, null=False)
+    truck = models.CharField(max_length=500, null=False, default="None")
     isOff = models.NullBooleanField(null= True, default = False)
     
     def __str__(self):
