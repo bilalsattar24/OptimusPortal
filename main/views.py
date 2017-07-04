@@ -108,7 +108,7 @@ def addday(request):
     helper = request.GET.get('helperName')
     driver = request.GET.get('driverName')
     storeNum = request.GET.get('storeNum')
-    #storeNum2 = request.GET.get('storeNum2')
+    storeNum2 = request.GET.get('storeNum2')
     saturdayDate = request.GET.get('saturdayDate')
     truckName = request.GET.get('truckName')
     #truckName2 = request.GET.get('truckName2')
@@ -141,8 +141,6 @@ def addday(request):
                     d.storeNum2 = storeNum2
                 d.saturday = saturdayDate
                 d.truck = truckName
-                if truckName2:
-                    d.truck2 = truckName2
                 d.save()
                 break
                 return redirect('/main')
@@ -160,10 +158,16 @@ def addday(request):
             d.storeNum2 = storeNum2
         d.saturday = saturdayDate
         d.truck = truckName
-        if truckName2:
-            d.truck2 = truckName2
         d.save()
     return redirect('/main')
 
 def reports(request):
+    weekOf = None
+    weekOf = str(weekOf)
+    #modify weekOf to meet the format of django date
+
+    days = Day.objects.all()
+
+
+
     return redirect('/main')
