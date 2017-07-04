@@ -162,6 +162,7 @@ def addday(request):
     return redirect('/main')
 
 def reports(request):
+    template = loader.get_template('main/reports.html')
     weekOf = None
     weekOf = str(weekOf)
     #modify weekOf to meet the format of django date
@@ -169,16 +170,13 @@ def reports(request):
     daysOfWeek = []
     days = Day.objects.all()
     for d in days:
-        if d.weekOf == weekOf:
+        if d.saturday == weekOf:
             daysOfWeek.append(d)
     
     #sort by day, start from saturday
     #add sorted list to context
-    
+
     context = {
         'test' : "Bilal"
     }
-
-
-
-    return redirect('/main')
+    return HttpResponse(template.render(context, request))
