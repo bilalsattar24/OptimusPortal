@@ -164,3 +164,6 @@ def addday(request):
             d.truck2 = truckName2
         d.save()
     return redirect('/main')
+
+def reports(request):
+    
