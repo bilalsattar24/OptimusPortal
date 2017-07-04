@@ -1,4 +1,3 @@
-console.log("test")
 $(".newDatePick").change(function() {
     console.log("test2")
     var inputDate = String($(".newDatePick").val());
