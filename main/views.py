@@ -22,7 +22,6 @@ def index(request):
     
     trucks = Truck.objects.all()
     success = request.GET.get('success')
-    print success
     # dictionary that can be passed into html file to access variables
     context = {
         'test': "Bilal",
@@ -172,6 +171,13 @@ def reports(request):
     for d in days:
         if d.saturday == weekOf:
             daysOfWeek.append(d)
+    
+    trucks = Truck.objects.all()
+    truck = None
+    for t in trucks:
+        if t.id == 6:
+            truck = t
+    
     
     #sort by day, start from saturday
     #add sorted list to context
