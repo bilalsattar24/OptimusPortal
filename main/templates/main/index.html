@@ -11,36 +11,10 @@
     </head>
  
     <body>
-        <!--header-->
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-            
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand">Optimus Logistics</a>
-                </div>
-            
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="#">Home </a>
-                        </li>
-                        <li class="">
-                            <a href="/newweek">New Week </a>
-                        </li>
-                        <li class="">
-                            <a href="">Reports </a>
-                        </li>
-                    
-                    </ul>
-                </div> 
-            
-            </div>
-        </nav>
+        <!--nav bar-->
+        {% include 'main/navbar.html' %}
+        <!---->
+
         <div class="text-center">
             {% if success %}
             <div id="worked">
