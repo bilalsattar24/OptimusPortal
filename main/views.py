@@ -183,6 +183,7 @@ def reports(request):
     #add sorted list to context
 
     context = {
-        'test' : "Bilal"
+        'test' : "Bilal",
+        'trucks' : trucks
     }
     return HttpResponse(template.render(context, request))
