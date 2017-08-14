@@ -22,7 +22,7 @@ $(".newDatePick").change(function() {
     day = parseInt(day);
     date = new Date(year,month,day);
     console.log(date);
-    dayNumber = date.getDay()
+    dayNumber = date.getDay();
     console.log(dayNumber);
     var days = 
     [ 
@@ -73,7 +73,7 @@ $( document ).ready(function() {
     day = parseInt(day);
     date = new Date(year,month,day);
     console.log(date);
-    dayNumber = date.getDay()
+    dayNumber = date.getDay();
     console.log(dayNumber);
     console.log(days[dayNumber]);
     var dayName = days[dayNumber];
