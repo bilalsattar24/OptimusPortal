@@ -5,7 +5,9 @@ $(".newDatePick").change(function() {
     var day = String();
     var year = String();
     var month = String();
-    var count = 0; 
+    var count = 0;
+    //separate date into month, year, day variables.
+    //todo: move to external method for use in multiple places
     for (i=0; i<inputDate.length; i++) {
         if (i<4) {
             year += inputDate[i];
