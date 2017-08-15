@@ -1,5 +1,5 @@
 $(".reportsDateSearch").change(function(){
-    var inputDate = String($(".reportsDateSearch"));
+    var inputDate = String($(".reportsDateSearch").val());
     console.log(inputDate);
     var day = String();
     var year = String();
