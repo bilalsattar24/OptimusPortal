@@ -35,7 +35,7 @@ $(".reportsDateSearch").change(function(){
     ];
     console.log(days[dayNumber]);
     if (days[dayNumber] != "Saturday") {
-        $(".saturdayWarning").text("SELECTED DATE NOT Saturday");
+        $(".saturdayWarning").text("SELECTED DATE NOT A SATURDAY");
     }
     else {
         $(".saturdayWarning").text("");
