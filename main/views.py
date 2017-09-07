@@ -162,17 +162,23 @@ def addday(request):
 
 def reports(request):
     template = loader.get_template('main/reports.html')
-    weekOf = None
-    weekOf = str(weekOf)
-    #modify weekOf to meet the format of django date
+    weekOf = request.GET.get('reportsDateSearch')
+    truckID = request.GET.get('truckID')
 
+    trucks = Truck.objects.all()
+
+    if weekOf and truckID
+        generateReports(str(weekOf), str(truckName))
+        #return HttpResponse(template.render(context), request))
+
+    #todo: get parameter request from reports.html and check if they exist. if they do, call method to generate report 
+    #modify weekOf to meet the format of django date
     daysOfWeek = []
     days = Day.objects.all()
     for d in days:
         if d.saturday == weekOf:
             daysOfWeek.append(d)
     
-    trucks = Truck.objects.all()
     truck = None
     for t in trucks:
         if t.id == 6:
@@ -187,3 +193,8 @@ def reports(request):
         'trucks' : trucks
     }
     return HttpResponse(template.render(context, request))
+
+#***--------------- Helper Methods ----------------***#
+def generateReports(weekOf, truckName):
+    return null # change to whatever info(context) is needed for the report to be generated. 
+    
