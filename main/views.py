@@ -162,13 +162,16 @@ def addday(request):
 
 def reports(request):
     template = loader.get_template('main/reports.html')
-    weekOf = request.GET.get('reportsDateSearch')
-    truckID = request.GET.get('truckID')
+    weekOf = request.POST.get('reportsDateSearch')
+    truckID = request.POST.get('truckID')
 
     trucks = Truck.objects.all()
 
     if weekOf and truckID:
-        generateReports(str(weekOf), str(truckName))
+        print str(weekOf)
+        # generateReports(str(weekOf), str(truckName))
+    else:
+        print "no reports selected"
         #return HttpResponse(template.render(context), request))
 
     #todo: get parameter request from reports.html and check if they exist. if they do, call method to generate report 
