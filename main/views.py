@@ -172,8 +172,12 @@ def reports(request):
 
 
     if weekOf and truckID:
-        print str(weekOf)
+        context['weekOf'] = str(weekOf)
         template = loader.get_template('main/company.html')
+        for t in trucks:
+            if str(t.id) == str(truckID):
+                print 
+                context['truckName'] = str(t.truckName)
         return HttpResponse(template.render(context, request))
         # generateReports(str(weekOf), str(truckName))
     else:
