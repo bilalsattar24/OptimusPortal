@@ -164,11 +164,17 @@ def reports(request):
     template = loader.get_template('main/reports.html')
     weekOf = request.POST.get('reportsDateSearch')
     truckID = request.POST.get('truckID')
-
     trucks = Truck.objects.all()
+    context = {
+        'test' : "Bilal",
+        'trucks' : trucks
+    }
+
 
     if weekOf and truckID:
         print str(weekOf)
+        template = loader.get_template('main/company.html')
+        return HttpResponse(template.render(context, request))
         # generateReports(str(weekOf), str(truckName))
     else:
         print "no reports selected"
@@ -191,10 +197,6 @@ def reports(request):
     #sort by day, start from saturday
     #add sorted list to context
 
-    context = {
-        'test' : "Bilal",
-        'trucks' : trucks
-    }
     return HttpResponse(template.render(context, request))
 
 #***--------------- Helper Methods ----------------***#
