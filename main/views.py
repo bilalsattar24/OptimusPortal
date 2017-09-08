@@ -167,7 +167,7 @@ def reports(request):
 
     trucks = Truck.objects.all()
 
-    if weekOf and truckID
+    if weekOf and truckID:
         generateReports(str(weekOf), str(truckName))
         #return HttpResponse(template.render(context), request))
 
