@@ -165,6 +165,7 @@ def reports(request):
     weekOf = request.POST.get('reportsDateSearch')
     truckID = request.POST.get('truckID')
     trucks = Truck.objects.all()
+    days = Day.objects.all()
     context = {
         'test' : "Bilal",
         'trucks' : trucks
@@ -176,16 +177,17 @@ def reports(request):
         template = loader.get_template('main/company.html')
         for t in trucks:
             if str(t.id) == str(truckID):
-                print 
                 context['truckName'] = str(t.truckName)
+
+        for d in days:
+            if str(d.saturday) == str(weekOf):
+                print "worked"
         return HttpResponse(template.render(context, request))
         # generateReports(str(weekOf), str(truckName))
     else:
         print "no reports selected"
         #return HttpResponse(template.render(context), request))
 
-    #todo: get parameter request from reports.html and check if they exist. if they do, call method to generate report 
-    #modify weekOf to meet the format of django date
     daysOfWeek = []
     days = Day.objects.all()
     for d in days:
