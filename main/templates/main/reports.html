@@ -3,74 +3,73 @@
 
 <head>
 </head>
-    <title>Report</title>
-    {% load static %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Report</title>
+{% load static %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <body>
 </body>
-    {% include 'main/navbar.html' %}
-    <h1 class="text-center">Reports Page</h1>
-    <!-- add form for truck and date --> 
+{% include 'main/navbar.html' %}
+<h1 class="text-center">Reports Page</h1>
+<!-- add form for truck and date -->
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="owner text-center">
                 <div class="panel panel-default">
-                    <div class="text-center">
-                        <form action="/reports" method="post">
-                            <!--load search results in reports.py-->
-                            <input type="hidden" name="search" value="true">
-                            <div class="form-group">
-                                <label for="reportsDateSearch">Pick a Saturday only</label>
-                                <input type="date" class= "reportsDateSearch" name="reportsDateSearch">
-                            </div>
-                            <div class="saturdayWarning red" id="saturdayWarning"></div>
-                            <div class="form-group">
-                                <label for="">Truck: </label>
-                                 
-                                <select name="truckID">
-                                    {% for truck in trucks %}
-                                    <option value="{{truck.id}}">{{truck.truckName}}</option>
-                                    {% endfor %} 
-                                </select>
-                            <input type="submit"/> 
-                        </form>        
+                    <div class="panel-heading">
+                        sheet for owner
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="owner text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                sheet for owner
-                            </div>
-                            <div class="panel-body">
-                                owner info
-                            </div>
+                    <div class="panel-body">
+                        owner info
+
+                        <div class="form-group">
+                            <form action="/reports/" method="post">
+                                {% csrf_token %}
+                                <!--load search results in reports.py-->
+                                <input type="hidden" name="search" value="true">
+                                <div class="form-group">
+                                    <label for="reportsDateSearch">Pick a Saturday only</label>
+                                    <input type="date" class="reportsDateSearch" name="reportsDateSearch" required="true">
+                                </div>
+                                <div class="saturdayWarning red" id="saturdayWarning"></div>
+                                <div class="form-group">
+                                    <label for="">Truck: </label>
+                                    <select name="truckID">
+                                        {% for truck in trucks %}
+                                            <option value="{{truck.id}}">{{truck.truckName}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div id="submitDiv">
+                                        <input type="submit" id="ownerSubmit"/>
+                                    </div>    
+                            </form>
                         </div>
                     </div>
-                <!--md-->
-                </div>
-    
-                <div class="col-md-6">
-                    <div class="employee text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                sheet for employee
-                            </div>
-                            <div class="panel-body">
-                                employee info
-                            </div>
-                        </div>
-                    </div>
-                <!--md-->
                 </div>
             </div>
         </div>
+            <!--md-->
     </div>
-    <script src="{% static 'main/js/reportsPageValidation.js' %}"></script>
+        <div class="col-md-6">
+            <div class="employee text-center">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                    sheet for employee
+                </div>
+                <div class="panel-body">
+                    employee info
+                </div>
+            </div>
+        </div>
+        <!--md-->
+    </div>
+</div>
+
+<script src="{% static 'main/js/reportsPageValidation.js' %}"></script>
+
 </html>
