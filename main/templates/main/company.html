@@ -13,18 +13,124 @@
 
 
 <head>
-    <h1>
-        Company Report
-    </h1>
+    <title>Company Report</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/styles.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <td>hi</td>
-            <td>hello</td>
-        </tr>
-    </table>
-    <input TYPE="button" onClick="window.print()">
+        <div class="container">
+                <h1 class="text-center" id="newWeekHeader">Company Report</h1>
+                <h3>Truck: {{truckName}}<h3>
+                <h4>Pay Period: {{weekOf}}</h4>
+                
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Date</th>
+                            <th>Deliveries</th>
+                            <th>Helper</th>
+                            <th>Driver</th>
+                            <th>Pay</th>
+                            <th>Store</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunday</td>
+                            <td><input id="test" class="form-control" type="date" value=""></td>
+                            <td>
+                                <input id="numDelivery1" placeholder="Amount" type="text" name="numDeliveries"/>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td id="pay1">$ 0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input1"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input2"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input3"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input4"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input5"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td><input class="form-control" type="date" value="2011-08-19" id="example-date-input6"></td>
+                            <td>
+                                <form>
+                                    <input placeholder="Amount" type="text" name="numDeliveries"/>
+                                </form>
+                            </td>
+                            <td><input placeholder="Helper name" type="text" name="helper"/></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 </body>
             
 
