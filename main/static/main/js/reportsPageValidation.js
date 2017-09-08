@@ -43,6 +43,3 @@ $(".reportsDateSearch").change(function(){
         $("#submitDiv").html("<input type=\"submit\" id=\"ownerSubmit\"/>");
     }
 });
-$(".reportsDateSearch").change(function(){
-    
-});
