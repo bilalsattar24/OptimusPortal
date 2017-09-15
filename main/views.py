@@ -49,7 +49,8 @@ def day(request):
     day = request.GET.get('day')
     year = request.GET.get('year')
     truckID = request.GET.get('truckID')
-    
+    date = request.GET.get('date')
+
     trucks = Truck.objects.all()
     truck = None        
     for t in trucks:
@@ -60,14 +61,14 @@ def day(request):
     
     # date requested from user built to match column in "day" object
     requestedDate = year + "-" + month + "-" + day
-    
+    print "date: " + date
     # get all days
     days = Day.objects.all()
     day = None # this day will be passed into index.html
     
     
     for d in days:
-        if str(d.date) == requestedDate:
+        if str(d.date) == date:
             day = d
             break
     
